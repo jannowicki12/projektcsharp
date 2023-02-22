@@ -1,0 +1,34 @@
+﻿@model List<aplikacja.Models.Domain.Employee>
+@{
+    ViewData["Title"] = "Employee";
+}
+
+<h1>Employee</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Birth Date</th>
+            <th>Position</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <th>@employee.Id</th>
+                <th>@employee.Name</th>
+                <th>@employee.Email</th>
+                <th>@employee.Salary</th>
+                <th>@employee.BirthDate.ToString("dd-MM-yyyy")</th>
+                <th>@employee.Position</th>
+                <td><a href="Employees/View/@employee.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+<</table>
